@@ -1,0 +1,284 @@
+body {
+  background: #141414;
+  color: #fff;
+}
+
+.movie-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.movie-list__header {
+  width: 100%;
+  margin: auto;
+  padding: 20px;
+  position: fixed;
+  z-index: 2;
+  background-color: #141414;
+}
+
+.movie-list__header--top {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .movie-list__header--top {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+  }
+  .movie-list__header--top .col {
+    width: 95%;
+  }
+}
+
+.movie-list__header .col {
+  padding-left: 0;
+}
+
+.movie-list__header input {
+  max-width: 97%;
+}
+
+@media screen and (max-width: 1024px) {
+  .movie-list__header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+    padding: 10px 0 0;
+  }
+}
+
+.movie-list__filters {
+  width: 100%;
+  padding-left: 0;
+  margin: 20px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  grid-column-gap: 1%;
+}
+
+.movie-list__filters .btn {
+  color: #fff;
+  background-color: #313131;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-family: Oswald;
+  font-style: italic;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  padding: 5px 10px;
+  min-width: 120px;
+}
+
+@media screen and (max-width: 1024px) {
+  .movie-list__filters .btn {
+    min-width: unset;
+    font-size: 14px;
+    width: auto;
+    margin-bottom: 5px;
+  }
+}
+
+.movie-list__container--top {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  margin-top: 170px;
+}
+
+@media screen and (max-width: 1024px) {
+  .movie-list__container--top {
+    margin-top: 210px;
+  }
+}
+
+.movie-card {
+  max-width: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+.movie-card:hover .movie-card__poster {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.movie-card.hidden {
+  display: none;
+}
+
+.movie-card__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  width: 98%;
+  margin: auto;
+  grid-column-gap: 1.1rem;
+}
+
+.movie-card__poster {
+  max-width: 250px;
+  min-height: 396px;
+  position: relative;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+
+.movie-card__poster img {
+  max-width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .movie-card__poster {
+    min-height: 171px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .movie-card__title {
+    display: none;
+  }
+}
+
+.movie-card__streaming {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  grid-column-gap: 2.5%;
+  padding: 10px 5px;
+}
+
+.movie-card__stamp {
+  height: 15px;
+  width: 30px;
+  display: none;
+  -webkit-transform: skew(-20deg);
+          transform: skew(-20deg);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 14px;
+  color: #000;
+  font-weight: 600;
+  font-family: Oswald;
+}
+
+.movie-card__stamp--vudu {
+  background-color: #0077b6;
+}
+
+.movie-card__stamp--primeVideo {
+  background-color: #ffb703;
+}
+
+.movie-card__stamp--moviesAnywhere {
+  background-color: #6a4c93;
+}
+
+.movie-card__stamp--iTunes {
+  background-color: #ff5454;
+}
+
+.movie-card__stamp--bluRay {
+  background-color: #00b4d8;
+}
+
+.movie-card__stamp--dvd {
+  background-color: #adb5bd;
+}
+
+.movie-card[data-streaming*="Vudu"] .movie-card__stamp--vudu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.movie-card[data-streaming*="Prime Video"] .movie-card__stamp--primeVideo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.movie-card[data-streaming*="Movies Anywhere"] .movie-card__stamp--moviesAnywhere {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.movie-card[data-streaming*="iTunes"] .movie-card__stamp--iTunes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.movie-card[data-streaming*="Blu-Ray"] .movie-card__stamp--bluRay {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.movie-card[data-streaming*="DVD"] .movie-card__stamp--dvd {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.movie-card__runtime {
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .movie-card__runtime {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .movie-card {
+    max-width: 31.333%;
+  }
+  .movie-card__container {
+    grid-column-gap: 0.6rem;
+  }
+}
+/*# sourceMappingURL=movieList.css.map */
